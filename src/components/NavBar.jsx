@@ -10,7 +10,7 @@ export const NavBar = () => (
     <header>
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand href="#home">Ecommerce</Navbar.Brand>
+                <Navbar.Brand href="#home">TCGstore</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="#home">Inicio</Nav.Link>
                     <Nav.Link href="#productos">Productos</Nav.Link>
