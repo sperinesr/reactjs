@@ -2,7 +2,40 @@ img {
   height: 2rem;
   border-radius: 10px;
 }
+
+.greeting {
+  text-align: center;
+  color: floralwhite;
+}
+
+.mt-3{
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+}
+
+.mt-3 div {
+  justify-content: center;
+  margin: 6px;
+  background-color: rgb(247, 247, 212);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.imgProducts {
+  scale: 80%;
+  height: auto;
+}
+
+.text-center_card{
+  justify-content: center;
+}
+
 span {
   padding-left: 0.4rem;
   color: white;
+}
+
+.itemCount span {
+  color: black;
+  padding: 1rem;
 }
