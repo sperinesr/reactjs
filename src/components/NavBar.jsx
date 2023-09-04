@@ -7,7 +7,7 @@ import { CartWidget } from "./CartWidget";
 
 import { Link } from 'react-router-dom';
 
-export const NavBar = ({ categories }) => (
+export const NavBar = () => (
     <header>
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>

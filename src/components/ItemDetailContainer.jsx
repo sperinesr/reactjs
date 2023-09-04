@@ -22,13 +22,13 @@ export const ItemDetailContainer = (props) => {
             }, 2000);
         });
         promise.then((data) => setProduct(data))
-    },);
+    }, [id]);
 
-    if (!product) return <h1 style={{ textAlign: "center" }}>Loading...</h1>
+    if (!product) { return <h1 style={{ textAlign: "center" }}>Loading...</h1> }
 
     return (
         <Container className="mt-3">
-            <h2 style={{ textAlign: "center", color : "floralwhite" }}>Detalles</h2>
+            <h2 style={{ textAlign: "center", color: "floralwhite" }}>Detalles</h2>
             <ItemDetail product={product}></ItemDetail>
         </Container>
     );

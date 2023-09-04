@@ -10,7 +10,7 @@ import { ItemList } from "./ItemList";
 
 export const ItemListContainer = (props) => {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
 
     const { id } = useParams();
 
@@ -26,7 +26,9 @@ export const ItemListContainer = (props) => {
                 setProducts(productsFiltered)
             }
         })
-    },);
+    }, [id]);
+
+    if (!products) return <h1 style={{ textAlign: "center" }}>Loading...</h1>
 
     return (
         <Container className="mt-3">
@@ -34,7 +36,6 @@ export const ItemListContainer = (props) => {
             <div style={{ display: "flex", flexWrap: "wrap" }}>
                 <ItemList products={products}></ItemList>
             </div>
-
         </Container>
-    );
+    )
 };
