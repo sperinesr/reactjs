@@ -3,32 +3,31 @@ import { useParams } from "react-router-dom";
 
 import Container from "react-bootstrap/Container"
 
-import data from '../data/products.json'
-
 import { ItemDetail } from "./ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 export const ItemDetailContainer = (props) => {
 
     const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
 
     useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const productById = data.find((product) => product.id === Number(id))
-                resolve(productById)
-            }, 2000);
-        });
-        promise.then((data) => setProduct(data))
+        const db = getFirestore();
+        const refDoc = doc(db, "store", id)
+
+        getDoc(refDoc).then((snapshot) => {
+            setProduct({ id: snapshot.id, ...snapshot.data() })
+        }).finally(() => setLoading(false))
     }, [id]);
 
-    if (!product) { return <h1 style={{ textAlign: "center" }}>Loading...</h1> }
+    if (loading) { return <h1 style={{ textAlign: "center" }}>Loading...</h1> }
 
     return (
-        <Container className="mt-3">
-            <h2 style={{ textAlign: "center", color: "floralwhite" }}>Detalles</h2>
+        <Container className="mt-3" style={{ paddingBottom: '5px' }}>
+            <h2 style={{ textAlign: "center", color: "floralwhite" }}>Detail</h2>
             <ItemDetail product={product}></ItemDetail>
         </Container>
     );

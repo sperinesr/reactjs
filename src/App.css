@@ -15,6 +15,7 @@ img {
 
 .mt-3 div {
   justify-content: center;
+  align-content: center;
   margin: 6px;
   background-color: rgb(247, 247, 212);
   border-radius: 20px;
@@ -24,10 +25,6 @@ img {
 .imgProducts {
   scale: 80%;
   height: auto;
-}
-
-.text-center_card{
-  justify-content: center;
 }
 
 span {
