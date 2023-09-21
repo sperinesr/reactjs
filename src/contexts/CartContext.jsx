@@ -21,6 +21,7 @@ export const CartProvider = ({ children }) => {
             })
             setProducts(updateProducts)
         }
+        alert("Product added")
     }
 
 
@@ -29,9 +30,14 @@ export const CartProvider = ({ children }) => {
     const removeProduct = (id) => {
         const productsFiltered = products.filter(products => products.id !== id)
         setProducts(productsFiltered)
+
+        alert("Product removed")
     }
 
-    const clear = () => setProducts([])
+    const clear = () => {
+        (setProducts([]))
+        alert("Cart clear")
+    }
 
     return (
         <CartContext.Provider value={{ addProduct, products, removeProduct, clear, totalCart }}>
