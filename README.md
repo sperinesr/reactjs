@@ -1,17 +1,17 @@
-#Proyecto React para CoderHouse
+# Proyecto React para CoderHouse
 
-##incluye:
+## incluye:
 
-###navbar
-###carrito de compras
-###productos
-###detalle de productos
-###categorizacion
-###generar orden de compra
+### navbar
+### carrito de compras
+### productos
+### detalle de productos
+### categorizacion
+### generar orden de compra
 
-##adiconales:
-###bootstrap
-###firebase
+## adiconales:
+### bootstrap
+### firebase
 
 
 # Getting Started with Create React App
