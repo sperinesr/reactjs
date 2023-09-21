@@ -61,10 +61,10 @@ export const Cart = () => {
     }
 
     return (
-        <Container className="mt-3" style={{ textAlign: "center" }}>
+        <Container className="mt-3" style={{ textAlign: "center", marginTop: "70px" }}>
             {products.length === 0 ? (
                 <>
-                    <h2 className="greeting">No products added</h2>
+                    <h2 className="greeting" style={{ marginTop: "70px" }}>No products added</h2>
                     <Link to="/">
                         <Button style={{ margin: "15px" }}>
                             Return
@@ -73,7 +73,7 @@ export const Cart = () => {
                 </>
             ) : (
                 <>
-                    <h2 className="greeting">Cart</h2>
+                    <h2 className="greeting" style={{ marginTop: "70px" }}>Cart</h2>
                     <Table striped bordered hover>
                         <thead>
                             <tr>

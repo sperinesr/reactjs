@@ -19,10 +19,9 @@ export const ItemDetail = ({ product }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Text className="text-muted">Stock {product.stock}</Card.Text>
-                <Card.Text className="text-muted" style={{fontWeight:"bolder"}}>${product.price} dollars</Card.Text>
+                <Card.Text className="text-muted" style={{ fontWeight: "bolder" }}>${product.price} dollars</Card.Text>
                 <ItemCount stock={product.stock} onAdd={onAdd}></ItemCount>
             </Card>
         </div >
-
     )
 }

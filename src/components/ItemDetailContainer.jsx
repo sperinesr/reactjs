@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import Container from "react-bootstrap/Container"
+import { Spinner } from "react-bootstrap";
 
 import { ItemDetail } from "./ItemDetail";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
@@ -23,11 +24,19 @@ export const ItemDetailContainer = (props) => {
         }).finally(() => setLoading(false))
     }, [id]);
 
-    if (loading) { return <h1 style={{ textAlign: "center" }}>Loading...</h1> }
+    if (loading) {
+        return (
+            <div style={{ textAlign: "center", marginTop: "70px" }}>
+                <h1>Loading...</h1>
+                <Spinner animation="border" role="status">
+                </Spinner>
+            </div>
+        )
+    }
 
     return (
         <Container className="mt-3" style={{ paddingBottom: '5px' }}>
-            <h2 style={{ textAlign: "center", color: "floralwhite" }}>Detail</h2>
+            <h2 style={{ textAlign: "center", color: "floralwhite", marginTop: "70px" }}>Detail</h2>
             <ItemDetail product={product}></ItemDetail>
         </Container>
     );

@@ -24,15 +24,15 @@ export const NavBar = () => {
                 const snapshot = await getDocs(refCollection);
 
                 if (snapshot.size === 0) {
-                    console.log("No hay productos");
+                    setProducts([]);
                 } else {
                     const productsData = snapshot.docs.map((doc) => {
                         return { category: doc.category, ...doc.data() };
                     });
                     setProducts(productsData);
                 }
-            } catch (error) {
-                console.error("Error al obtener los productos:", error);
+            } catch (error) {   
+                setProducts([]);
             }
         };
 
@@ -43,7 +43,7 @@ export const NavBar = () => {
 
     return (
         <header>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar bg="dark" data-bs-theme="dark" className="fixed-top" >
                 <Container>
                     <Navbar.Brand as={NavLink} to="/">TCGstore</Navbar.Brand>
                     <Nav className="me-auto">
@@ -54,7 +54,7 @@ export const NavBar = () => {
                                 </NavDropdown.Item>
                             ))}
                         </NavDropdown>
-                        <Nav.Link as={NavLink} to="#nosotros">Nosotros</Nav.Link>
+                        <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                     </Nav>
                     <CartWidget />
                 </Container>
